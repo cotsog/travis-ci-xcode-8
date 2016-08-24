@@ -1,0 +1,13 @@
+os: osx
+osx_image: xcode8
+
+rvm:
+    2.2.5
+
+cache:
+    - bundler
+    - cocoapods
+before_install:
+    - gem install xcpretty
+script:
+    - xcodebuild test -project travis-ci-xcode-8.xcodeproj -scheme travis-ci-xcode-8 -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.0'
