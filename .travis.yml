@@ -6,7 +6,7 @@ env: IOS_DESTINATION="platform=iOS Simulator,name=iPhone SE,OS=10.0"
 matrix:
   include:
     - osx_image: xcode7.3
-      script: xcodebuild -project travis-ci-xcode-8.xcodeproj -scheme travis-ci-xcode-8 build test
+      script: xcodebuild -project travis-ci-xcode-8.xcodeproj -scheme travis-ci-xcode-8 -sdk iphonesimulator build test
 
 rvm:
     2.2.5
