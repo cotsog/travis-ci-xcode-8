@@ -6,16 +6,10 @@ env: IOS_DESTINATION="platform=iOS Simulator,name=iPhone SE,OS=10.0"
 matrix:
   include:
     - osx_image: xcode7.3
-      env: IOS_DESTINATION="platform=iOS Simulator,name=iPhone 6s"
-      before_script: open -a "simulator" --args -CurrentDeviceUDID 5752202B-E7A2-4B6C-9D7B-B211C2F54654
+      script: xcodebuild -project travis-ci-xcode-8.xcodeproj -scheme travis-ci-xcode-8 build test
 
 rvm:
     2.2.5
 
-cache:
-    - bundler
-    - cocoapods
-before_install:
-    - gem install xcpretty
 script:
     - xcodebuild -project travis-ci-xcode-8.xcodeproj -scheme travis-ci-xcode-8 -destination "$IOS_DESTINATION" build test
