@@ -17,4 +17,4 @@ cache:
 before_install:
     - gem install xcpretty
 script:
-    - xcodebuild -project travis-ci-xcode-8.xcodeproj -scheme travis-ci-xcode-8 -destination "platform=iOS Simulator,name=$IOS_DEVICE,OS=$IOS_VERSION" build test
+    - xcodebuild -project travis-ci-xcode-8.xcodeproj -scheme travis-ci-xcode-8 -destination "$IOS_DESTINATION" build test
