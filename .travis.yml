@@ -1,9 +1,7 @@
 language: objective-c
 osx_image: xcode8
 
-env:
-   global:
-     - IOS_DEVICE="iPhone SE" IOS_VERSION="10.0"
+env: IOS_DEVICE="iPhone SE" IOS_VERSION="10.0"
 
 matrix:
   include:
